@@ -47,7 +47,7 @@ def process_answer():
         st.write("Correct Answer! Congrats!")
         st.session_state['score'] += 1
     else:
-        st.write("Wrong, GAME OVER!")
+        st.write("Wrong, GAME OVER!") #würde so nicht schon bei jeder falscher antwort game over stehen obwohl man noch 2 leben zB hat?
         st.session_state['lives'] -= 1
 
     if st.session_state['lives'] <= 0:
@@ -70,6 +70,9 @@ if st.button("Start Game"):
     st.session_state['lives'] = 3
     st.session_state['score'] = 0
     fetch_new_question()
+
+if st.button("Surrender"):
+        st.session_state['lives'] = 0
 
 if st.session_state['start_game']:
     if 'question' in st.session_state:
