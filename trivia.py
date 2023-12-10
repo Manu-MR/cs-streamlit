@@ -2,6 +2,7 @@ import streamlit as st
 import requests
 from api import get_question
 import random
+import time
 
 #Page set up and Title
 
@@ -129,6 +130,6 @@ if st.session_state['start_game']:
 
 
 #Display score and highscore
-st.write(f'Your score:{st.session_state["score"]}')
-st.write(f'Your Highscore is:{st.session_state["highscore"]}')
+st.write(f'Your Score: {st.session_state["score"]}')
+st.write(f'Your Highscore is: {st.session_state["highscore"]}')
 
